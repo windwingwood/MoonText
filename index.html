@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--Create by Kaztha-->
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>月球文本 V2.0</title>
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" charset="utf-8" src="output.js"></script>
+		<script type="text/javascript" charset="utf-8" src="key.js"></script>
+		<script type="text/javascript" charset="utf-8" src="code.js"></script>
+		<script>
+			/* 执行函数 */
+			function Ego(){
+				clean();
+				var base = document.getElementById("text").value;
+				document.getElementById("text").value = MoonEncrypt(base);
+				output("加密完成");
+			}
+			function EgoClip(){
+				clean();
+				var base = document.getElementById("text").value;
+				var iii  = MoonEncrypt(base);
+				document.getElementById("text").value = iii;
+				var ii = clipSet(iii);
+				if(ii==1)
+				output("加密完成，已复制入剪贴板");
+				else
+				output("加密完成，剪贴板功能无法使用");
+			}
+			function Fgo(){
+				clean();
+				var base = document.getElementById("text").value;
+				document.getElementById("text").value = MoonDecrypt(base);
+				output("解码完成");
+			}
+			function FgoClip(){
+				clean();
+				var base = clipGet();
+				if(base == 0)return;
+				document.getElementById("text").value = MoonDecrypt(base);
+				MoonDecrypt(base);
+				output("解码完成");
+			}
+			function read(){
+					clean();
+					var base = document.getElementById("keyText").value;
+					key = base;
+					keyRead();
+			}
+			window.onload = function(){
+					var localKey = localGet("key");
+					if(localKey!=null)key = localKey;
+					keyRead();
+					document.getElementById("keyText").value = key;
+			}
+		</script>
+	</head>
+	<body>
+		<div id="all">
+			<input type="text" id="keyText"/>
+			<input type="button" value="设置密钥" onclick="read()"/>
+			<textarea type="text" id="text"></textarea>
+			<input type="button" value="加密" onclick="Ego()" />
+			<input type="button" value="解码" onclick="Fgo()" />
+			仅IE可用功能→
+			<input type="button" value="加密并复制入剪贴板" onclick="EgoClip()" />
+			<input type="button" value="从剪贴板读取解码" onclick="FgoClip()" />
+			<ul id = "output"></ul>
+		</div>
+	</body>
+</html>
