@@ -1,0 +1,39 @@
+#output{
+		padding-left:20px;
+		font-size:15px;
+}
+.error{
+		color:red;
+		padding-left:20px;
+		font-size:15px;
+}
+#all{
+		margin:auto;
+		width:500px;
+		line-height:30px;
+		position:relative;
+}
+#text{
+		width:99%;
+		height:200px;
+		font-size:15px;
+}
+#keyText{
+		width:410px;
+		margin-right:10px;
+}
+
+@media only screen and (max-width:516px) {
+		#all{
+				width:100%;
+		}
+		#keyText{
+				width:75%;
+		}
+}
+
+@media only screen and (max-width:370px) {
+		#keyText{
+				width:100%;
+		}
+}
