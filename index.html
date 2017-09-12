@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.minimum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="HandheldFriendly" content="true">
-		<title>月球文本 V2.1</title>
+		<title>月球文本 V2.2</title>
 		<link href="style.css" rel="stylesheet" type="text/css">
 		<script type="text/javascript" charset="utf-8" src="output.js"></script>
 		<script type="text/javascript" charset="utf-8" src="key.js"></script>
@@ -33,16 +33,15 @@
 			function Fgo(){
 				clean();
 				var base = document.getElementById("text").value;
-				document.getElementById("text").value = MoonDecrypt(base);
-				output("解码完成");
+				base = MoonDecrypt(base);
+				if(base==-1)return;
+				document.getElementById("text").value = base;
 			}
 			function FgoClip(){
 				clean();
 				var base = clipGet();
 				if(base == 0)return;
 				document.getElementById("text").value = MoonDecrypt(base);
-				MoonDecrypt(base);
-				output("解码完成");
 			}
 			function read(){
 					clean();
