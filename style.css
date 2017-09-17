@@ -19,8 +19,8 @@
 		font-size:15px;
 }
 #keyText{
-		width:410px;
-		margin-right:10px;
+		width:200px;
+		margin-right:5px;
 }
 
 @media only screen and (max-width:516px) {
@@ -28,11 +28,11 @@
 				width:100%;
 		}
 		#keyText{
-				width:75%;
+				width:38%;
 		}
 }
 
-@media only screen and (max-width:370px) {
+@media only screen and (max-width:450px) {
 		#keyText{
 				width:95%;
 		}
