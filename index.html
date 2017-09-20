@@ -49,9 +49,10 @@
 					clean();
 					var base = document.getElementById("keyText").value;
 					key = base;
-					keyRead();
-					localSet("key",key);
-					refreshSelect();
+					if(keyRead()==0){
+							localSet("key",key);
+							refreshSelect();
+					}
 			}
 			function selectKey(){
 					clean();

@@ -26,6 +26,7 @@ function keyRead(){
 		if(mixX>=10 && mixY>=10 && mixZ>=10 && mixM>0 && mixM<10 && groupChange>0){
 				output("密钥初始化成功");
 				output("可以开始解析");
+				return 0;
 		}
 		else error("密钥初始化失败");
 		return -1;
